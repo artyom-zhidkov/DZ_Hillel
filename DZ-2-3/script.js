@@ -68,22 +68,21 @@ function task4() {
     if (!Number.isInteger(Number(n))) {
         return alert("Enter valid integer number");
     }
+      
+    //с отрицательными можно ещё сделать проверку
+    
     let sum = 0;
-    let nNumber = [];
     let nReverse = "";
 
     for (let i = 0; i < n.length; i++) {
-        nNumber[i] = n[i];
         sum += Number(n[i]);
         if (n.length != 1) {
             nReverse += n[n.length-i-1];
         }
     }
-    
-    //с отрицательными можно ещё сделать проверку Math.abs
-
-    alert("Разбитое на цифры число n : " + nNumber);
-    alert("Количество цифр в числе :  " + nNumber.length);
+  
+    alert("Разбитое на цифры число n : " + n.split(""));
+    alert("Количество цифр в числе :  " + n.length);
     alert("Сумма цифр числа n :  " + sum);
     alert("Обратный порядок цифр числа n :  " + nReverse);
 }
