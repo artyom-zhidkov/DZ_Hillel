@@ -126,7 +126,7 @@ function task6() {
 //    for (let i = 0; i < myText.length; i++) {
 //        if (Number(myText[i])) {
 //            let nextNumber = myText[i];
-//            for (let k = 1; k <= 10; k++) {
+//            for (let k = 1; ; k++) {
 //                if (Number(myText[i+k]) || myText[i+k] === "0") {
 //                    nextNumber += myText[i+k];
 //                }
