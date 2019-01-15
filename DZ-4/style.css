@@ -1,0 +1,13 @@
+.color__red {
+    color: red;
+}
+
+.color__green {
+    color: green;
+}                
+
+.div__task9 {
+    width: 100px;
+    height: 50px;
+    background: rgba(155,233,32,0.2);
+}
