@@ -93,7 +93,7 @@ function runTask6() {
     const x2 = x2str.value;
     const y2 = y2str.value;
     const hasError = [x1,x2,y1,y2].every( val => {
-        if (x1 === "") {
+        if (val === "") {
             return false;
         }
         return Number.isFinite(Number(val));
