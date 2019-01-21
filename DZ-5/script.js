@@ -213,38 +213,44 @@ console.log(getSequenceFromRange(-5, 4));
 //HARD:
 //Напишите функцию, которая принимает параметром массив (не обязательный параметр) а возвращает объект, в котором есть метод next, при каждом последующем вызове которого он будет возвращать следующий объект из массива. В объекте также должен быть метод set, который должен принимать массив и заменять им первоначальный массив. Также в объекте должно быть свойство completed, которое по умолчанию равно false, но должно быть изменено на true в тот момент, когда метод next вернет последний элемент массива.
 
-
+// в следующем коде, я вынес методы в прототип, но для этого добавил в объект исходный массив,
+// ниже в закаменченном коде сделал варинат с замыканием, но методы будут дублироваться в новых объектах.
 function GetIterableObject(arr) {
+    this.arr = arr;
     let i = 0;
-    if (!Array.isArray(arr)) {
-        arr = [];
+    if (!Array.isArray(this.arr)) {
+        this.arr = [];
     }
-    this.next = () => {
-        if (this.completed) return;
-        if (i === arr.length-1) {
-            this.completed = true;
-        }
-        return arr[i++];
-    };
-    this.set = newArr => {
-        if (!Array.isArray(newArr)) {
-            alert("Метод set(arr) принимает только массив. Укажите массив");
-        } else {
-            i = 0;
-            this.completed = false;
-            arr = newArr;
-        }
-    };
-    this.print = () => console.log(arr);//метод создан для проверки масива в консоли
     this.completed = false;
 };
 
-const myobj = new GetIterableObject(["first", "second", "three"]);
+GetIterableObject.prototype.next = function() {
+    if (this.completed) return;
+    if (i === this.arr.length-1) {
+        this.completed = true;
+    }
+    return this.arr[i++];
+};
+
+GetIterableObject.prototype.set = function(newArr) {
+    if (!Array.isArray(newArr)) {
+        alert("Метод set(arr) принимает только массив. Укажите массив");
+    } else {
+        i = 0;
+        this.completed = false;
+        this.arr = newArr;
+        return "set() complited"
+    }
+};
+
+const a = ["first", "second", "three"];
+
+const myobj = new GetIterableObject(a);
 
 console.log("Task HARD");
-console.log(myobj.print());
+console.log(myobj.arr);
 console.log(myobj.set([1,2]));
-console.log(myobj.print());
+console.log(myobj.arr);
 console.log("next() " + myobj.next());
 console.log(".completed " + myobj.completed);
 console.log("next() " + myobj.next());
@@ -253,5 +259,47 @@ console.log("next() " + myobj.next());
 console.log(".completed " + myobj.completed);
 console.log("next() " + myobj.next());
 console.log(".completed " + myobj.completed);
+
+
+// function GetIterableObject(arr) {
+//     let i = 0;
+//     if (!Array.isArray(arr)) {
+//         arr = [];
+//     }
+//     this.next = () => {
+//         if (this.completed) return;
+//         if (i === arr.length-1) {
+//             this.completed = true;
+//         }
+//         return arr[i++];
+//     };
+//     this.set = newArr => {
+//         if (!Array.isArray(newArr)) {
+//             alert("Метод set(arr) принимает только массив. Укажите массив");
+//         } else {
+//             i = 0;
+//             this.completed = false;
+//             arr = newArr;
+//         }
+//     };
+//     this.print = () => console.log(arr);//метод создан для проверки масива в консоли
+//     this.completed = false;
+// };
+
+// const myobj = new GetIterableObject(["first", "second", "three"]);
+
+// console.log("Task HARD");
+// console.log(myobj.print());
+// console.log(myobj.set([1,2]));
+// console.log(myobj.print());
+// console.log("next() " + myobj.next());
+// console.log(".completed " + myobj.completed);
+// console.log("next() " + myobj.next());
+// console.log(".completed " + myobj.completed);
+// console.log("next() " + myobj.next());
+// console.log(".completed " + myobj.completed);
+// console.log("next() " + myobj.next());
+// console.log(".completed " + myobj.completed);
+
 
 
