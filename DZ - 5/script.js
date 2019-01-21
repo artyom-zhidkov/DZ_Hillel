@@ -214,35 +214,32 @@ console.log(getSequenceFromRange(-5, 4));
 //Напишите функцию, которая принимает параметром массив (не обязательный параметр) а возвращает объект, в котором есть метод next, при каждом последующем вызове которого он будет возвращать следующий объект из массива. В объекте также должен быть метод set, который должен принимать массив и заменять им первоначальный массив. Также в объекте должно быть свойство completed, которое по умолчанию равно false, но должно быть изменено на true в тот момент, когда метод next вернет последний элемент массива.
 
 
-function getIterableObject(arr) {
-    const obj = {};
+function GetIterableObject(arr) {
     let i = 0;
     if (!Array.isArray(arr)) {
         arr = [];
     }
-    obj.next = () => {
-        if (obj.completed) return;
+    this.next = () => {
+        if (this.completed) return;
         if (i === arr.length-1) {
-            obj.completed = true;
+            this.completed = true;
         }
         return arr[i++];
     };
-    obj.set = newArr => {
+    this.set = newArr => {
         if (!Array.isArray(newArr)) {
             alert("Метод set(arr) принимает только массив. Укажите массив");
         } else {
             i = 0;
-            obj.completed = false;
-            arr.splice(0, arr.length); // очищаем массив на случай если новый будет меньшего размера
-            newArr.forEach(item => arr.push(item)); // можно доработать на случай того, если элементами массива будут объекты
+            this.completed = false;
+            arr = newArr;
         }
     };
-    obj.print = () => console.log(arr);//метод создан для проверки масива
-    obj.completed = false;
-    return obj;
-}
+    this.print = () => console.log(arr);//метод создан для проверки масива в консоли
+    this.completed = false;
+};
 
-const myobj = getIterableObject(["first", "second", "three"]);
+const myobj = new GetIterableObject(["first", "second", "three"]);
 
 console.log("Task HARD");
 console.log(myobj.print());
