@@ -2,7 +2,7 @@
 //1. Написать функцию, которая принимает параметром n - размерность матрицы,
 //а возвращает - заполненную “1” диагональную матрицу размерности n.
 
-function getDiagonalMatrix(n) {
+function getDiagonalMatrix(n) { //fillMatrix other name
     if (!Number.isFinite(n)) {
         return alert("Enter valid number");
     }
@@ -42,7 +42,7 @@ console.log(countLetters("Need to quickly learn Javascript."));
 //и возвращает его десятичное представление. 
 //Например: на входе строка “10”, на выходе - 2.
 
-function binaryToDecimal(binary) {
+function binaryToDecimal(binary) {       //toDemical(binStr)
     if (binary.split("").some(item => (item!=0 && item!=1))) {
         return alert("Enter number in decimal format");
     }
@@ -215,7 +215,7 @@ console.log(getSequenceFromRange(-5, 4));
 
 // в следующем коде, я вынес методы в прототип, но для этого добавил в объект исходный массив,
 // ниже в закаменченном коде сделал варинат с замыканием, но методы будут дублироваться в новых объектах.
-function GetIterableObject(arr) {
+function GetIterableObject(arr) {  //iterator
     this.arr = arr;
     let i = 0;
     if (!Array.isArray(this.arr)) {
@@ -262,6 +262,7 @@ console.log(".completed " + myobj.completed);
 
 
 // function GetIterableObject(arr) {
+// проверку на отсутсвие параментов можно описать проще
 //     let i = 0;
 //     if (!Array.isArray(arr)) {
 //         arr = [];
