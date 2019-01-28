@@ -7,25 +7,25 @@
 
 const Complex = (function() {
     return {
-        add: function(c1,c2) {
+        add: function(c1, c2) {
             return {
                 a: (c1.a + c2.a),
                 b: (c1.b + c2.b),
             };
         }, 
-        subtract: function(c1,c2) {
+        subtract: function(c1, c2) {
             return {
                 a: (c1.a - c2.a),
                 b: (c1.b - c2.b),
             };
         },
-        multiply: function(c1,c2) {
+        multiply: function(c1, c2) {
             return {
                 a: ((c1.a * c2.a) - (c1.b * c2.b)),
                 b: ((c1.a * c2.b) + (c1.b * c2.a)),
             };
         },
-        divide: function(c1,c2) {
+        divide: function(c1, c2) {
             return {
                 a: (((c1.a * c2.a) + (c1.b * c2.b)) / ((c2.a * c2.a) + (c2.b * c2.b))),
                 b: (((c2.a * c1.b) - (c1.a * c2.b)) / ((c2.a * c2.a) + (c2.b * c2.b))),
