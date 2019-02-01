@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+}
+
+header {
+    margin: 10px;
+    text-align: center;
+}
+
+
+.container {
+    background-color: #f9f9f9;
+    height: 280px;
+    width: 300px;
+    border: 1px solid lightgrey;
+    padding: 0px 25px;
+    margin: 5px;
+}
+
+.teapot {
+    display: block;
+    margin: 0 auto;
+    background-color: lightgrey;
+    height: 100px;
+    width: 230px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.water {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    background-color: #a3bced;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.border-top-left-right-radius {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.water span {
+    font-size: 0.9em;
+}
+
+.container span {
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+}
+
+.button {
+    display: block;
+    margin: 10px auto;
+    font-size: 24px;
+    color: #588e5f;
+    background-color: #a2f2ac;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #588e5f;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    transition: 0.1s linear;
+}
+
+.button:hover {
+    transform: scale(1.03);   
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

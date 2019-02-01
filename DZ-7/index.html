@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ-7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="handlebars-v4.0.12.js"></script>
+    <script id="html-template" type="text/x-handlebars-template">
+        <div class="container">
+            <header>{{volumeTeapot}}(l) | {{power}}(kW)</header>
+            <div class="teapot">
+                <div class="water" style="height: {{heightWataerForRender}}px">
+                    <span>{{volumeWater}}(l)</span>
+                </div>
+            </div>
+            <button class="button">
+                {{buttonInnerHtml}}
+            </button>
+            <span>Current temperature (C): </span>
+            <span>{{showTemperature}}</span><br>
+            <span>Time to finish (sec): </span>
+            <span>{{timeToFinish}}</span>
+        </div>
+    </script>
+    <script defer src="script.js"></script>
+</body>
+</html>
