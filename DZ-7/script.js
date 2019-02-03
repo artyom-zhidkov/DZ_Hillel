@@ -19,8 +19,8 @@ Teapot.prototype.render = function() {
         ...this,
         volumeWaterRender : this.volumeWater * 10,
         currentTemperatureRender: this.currentTemperature.toFixed(2),
-        colorRGBComponentBlue: 150 - Math.floor(this.currentTemperature / 10) * 15,
-        colorRGBComponentRed: 100 + Math.floor(this.currentTemperature / 10) * 15,
+        colorRGBComponentBlue: 150 - (this.currentTemperature / 10) * 15,
+        colorRGBComponentRed: 100 + (this.currentTemperature / 10) * 15,
     });
     this.addHandler();
 };
