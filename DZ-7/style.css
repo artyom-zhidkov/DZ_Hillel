@@ -2,8 +2,6 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
 }
 
 header {
@@ -13,21 +11,24 @@ header {
 
 
 .container {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
     background-color: #f9f9f9;
     height: 280px;
     width: 300px;
     border: 1px solid lightgrey;
+    border-radius: 5px;
     padding: 0px 25px;
     margin: 5px;
 }
 
 .teapot {
-    display: block;
     margin: 0 auto;
     background-color: lightgrey;
     height: 100px;
     width: 230px;
     border-radius: 10px;
+    overflow: hidden;
     display: flex;
     align-items: flex-end;
 }
@@ -38,13 +39,6 @@ header {
     justify-content: center;
     width: 230px;
     background-color: #a3bced;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.border-top-left-right-radius {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
 }
 
 .water span {
@@ -53,11 +47,10 @@ header {
 
 .container span {
     display: inline-block;
-    margin: 0;
-    padding: 5px;
+    margin: 5px;
 }
 
-.button {
+.button_action {
     display: block;
     margin: 10px auto;
     font-size: 24px;
