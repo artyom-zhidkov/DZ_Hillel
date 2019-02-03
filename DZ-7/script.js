@@ -56,7 +56,7 @@ Teapot.prototype.start = function () {
             this.status = "finish";
         } else {
             this.timeToFinish--;
-	        this.currentTemperature += this.deltaT;
+	    this.currentTemperature += this.deltaT;
         }
         this.render();
     }, 1000);
