@@ -77,7 +77,7 @@ Teapot.prototype.reset = function () {
 
 
 //Teapot(volumeTeapot, power, c, volumeWater, t1, t2, className)
-const teapot1 = new Teapot(10, 3000, 4200, 3, 0, 100, '.teapot1');
+const teapot1 = new Teapot(10, 1000, 4200, 4, 0, 100, '.teapot1');
 const teapot2 = new Teapot(10, 2000, 4200, 6, 10, 80, '.teapot2');
 const teapot3 = new Teapot(10, 2000, 4200, 10, 50, 90, '.teapot3');
 const teapot4 = new Teapot(10, 2000, 4200, 9, 0, 50, '.teapot4');
