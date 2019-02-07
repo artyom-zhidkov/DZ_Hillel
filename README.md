@@ -3,3 +3,4 @@
 ####  DZ-5   ---->     [show result](https://artyom-zhidkov.github.io/DZ_Hillel/DZ-5/)
 ####  DZ-6   ---->     [show result](https://artyom-zhidkov.github.io/DZ_Hillel/DZ-6/)
 ####  DZ-7   ---->     [show result](https://artyom-zhidkov.github.io/DZ_Hillel/DZ-7/)
+####  DZ-8   ---->     [show result](https://artyom-zhidkov.github.io/DZ_Hillel/DZ-8/)
